@@ -1,8 +1,6 @@
-# Enterprise RAG Assistant
+# End-to-end Retrieval-Augmented Generation (RAG) system for querying enterprise documents using local embeddings and a local LLM.
 
-End-to-end Retrieval-Augmented Generation (RAG) system for querying enterprise documents using local embeddings and a local LLM.
-
-## 🚀 Features
+## Features
 
 - PDF ingestion
 - Semantic chunking
@@ -12,11 +10,11 @@ End-to-end Retrieval-Augmented Generation (RAG) system for querying enterprise d
 - FastAPI endpoint (`/query`)
 - Fully offline and cost-free
 
-## 🧠 Architecture
+## Architecture
 
 User Question → FAISS Retrieval → Context Assembly → Local LLM → JSON Response
 
-## ⚙️ Run Locally
+## Run Locally
 
 ```bash
 python3.11 -m venv venv
