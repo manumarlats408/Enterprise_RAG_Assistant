@@ -1,35 +1,25 @@
 # Enterprise RAG Assistant
 
-Production-style Retrieval-Augmented Generation (RAG) system designed to simulate
-enterprise document intelligence use cases.
+End-to-end Retrieval-Augmented Generation (RAG) system for querying enterprise documents using local embeddings and a local LLM.
 
-## 📌 Business Context
+## 🚀 Features
 
-Organizations often need to extract actionable insights from large volumes
-of internal documents (reports, policies, technical manuals, financial statements).
-This project implements a Generative AI assistant capable of answering
-natural language questions over corporate documents.
+- PDF ingestion
+- Semantic chunking
+- Local embeddings (HuggingFace)
+- FAISS vector database
+- Local LLM via Ollama (Mistral)
+- FastAPI endpoint (`/query`)
+- Fully offline and cost-free
 
 ## 🧠 Architecture
 
-PDF Documents  
-→ Chunking  
-→ Embeddings  
-→ Vector Database (FAISS)  
-→ Retriever  
-→ LLM  
-→ FastAPI REST API  
+User Question → FAISS Retrieval → Context Assembly → Local LLM → JSON Response
 
-## 🛠 Tech Stack
+## ⚙️ Run Locally
 
-- Python
-- LangChain
-- OpenAI
-- FAISS
-- FastAPI
-- Pydantic
-
-## 🚀 Goal
-
-Build a scalable and modular RAG-based solution following
-production-oriented development practices.
+```bash
+python3.11 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn src.api:app --reload
